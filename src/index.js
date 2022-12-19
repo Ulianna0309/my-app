@@ -14,10 +14,10 @@ const elements = (
       <label htmlFor="btn"></label>
       <button id="btn" tabIndex={0}>cool</button>
   </div>
-)
+);
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 
 root.render(
-  elements
+  <App/>
 );
