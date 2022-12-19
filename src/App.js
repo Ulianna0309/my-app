@@ -1,4 +1,4 @@
-import logo from './logo.svg';
+import {Component} from 'react';
 import './App.css';
 
 const Header = () => {
@@ -16,6 +16,20 @@ const Field = () => {
           style={styledField}/>
 }
 
+class Field2 extends Component{
+  render(){
+    const holder = "Enter here";
+    const styledField = {
+      width: '300px'
+    };
+    return <input 
+            placeholder={holder} 
+            type="text" 
+            style={styledField}/>
+  }
+}
+
+
 function Btn() {
   const text = "Log in";
   const logged = false;
@@ -28,8 +42,11 @@ function App() {
         <Header/>
         <Field/>
         <Btn/>
+        <Field2/>
     </div>
   );
 }
 
+
+export {Header};
 export default App;
