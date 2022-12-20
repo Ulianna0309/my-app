@@ -3,6 +3,7 @@ import ReactDOM from 'react-dom/client';
 import './index.css';
 import App from './App';
 import { Header } from './App';
+import HomeworkApp from './homework/homework'
 
 const elem = React.createElement('h2', {className: 'greetings'}, 'Hello world');
 
@@ -23,4 +24,10 @@ root.render(
   <StrictMode>
     <App/>
   </StrictMode>
+);
+
+const homeworkApp = ReactDOM.createRoot(document.getElementById('homework-app'));
+
+homeworkApp.render(
+  <HomeworkApp counter={0}/>, 
 );
