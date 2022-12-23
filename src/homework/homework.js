@@ -1,6 +1,17 @@
 import React, {Component} from 'react';
 import ReactDOM from 'react-dom/client';
+import styled from 'styled-components';
 import './../homework/homework.css';
+import { Container } from '../App';
+
+const NewContainer = styled(Container)`
+background: red;
+
+button{
+  background: black;
+  color: ${props => props.active ? 'orange' : 'white'}
+}
+`
 
 class HomeworkApp extends React.Component {
     constructor(props) {
@@ -44,18 +55,21 @@ class HomeworkApp extends React.Component {
     render() {
       const {counter} = this.state;
       return (
-        <div class="app">
-          <div class="counter">{counter}</div>
-          <div class="controls">
-            <button onClick={this.Plus}>INC</button>
-            <button onClick={this.Minus}>DEC</button>
-            <button onClick={this.Random}>RND</button>
-            <button onClick={this.Reset}>RESET</button>
+        <NewContainer as="main" active>
+          <div class="app">
+            <div class="counter">{counter}</div>
+            <div class="controls">
+              <button onClick={this.Plus}>INC</button>
+              <button onClick={this.Minus}>DEC</button>
+              <button onClick={this.Random}>RND</button>
+              <button onClick={this.Reset}>RESET</button>
+            </div>
           </div>
-        </div>
+        </NewContainer>
       )
     }
   }
-  
 
+
+  
   export default HomeworkApp;
