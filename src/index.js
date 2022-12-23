@@ -4,6 +4,9 @@ import './index.css';
 import App from './App';
 import { Header } from './App';
 import HomeworkApp from './homework/homework'
+import 'bootstrap/dist/css/bootstrap.min.css';
+import BootstrapTest from './BootstrapTest.js'
+
 
 const elem = React.createElement('h2', {className: 'greetings'}, 'Hello world');
 
@@ -30,4 +33,12 @@ const homeworkApp = ReactDOM.createRoot(document.getElementById('homework-app'))
 
 homeworkApp.render(
   <HomeworkApp counter={0}/>, 
+);
+
+
+const BootstrapTestPage = ReactDOM.createRoot(document.getElementById('bootstrap-test'));
+
+
+BootstrapTestPage.render(
+  <BootstrapTest/> 
 );
