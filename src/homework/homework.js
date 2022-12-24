@@ -56,9 +56,9 @@ class HomeworkApp extends React.Component {
       const {counter} = this.state;
       return (
         <NewContainer as="main" active>
-          <div class="app">
-            <div class="counter">{counter}</div>
-            <div class="controls">
+          <div className="app">
+            <div className="counter">{counter}</div>
+            <div className="controls">
               <button onClick={this.Plus}>INC</button>
               <button onClick={this.Minus}>DEC</button>
               <button onClick={this.Random}>RND</button>
