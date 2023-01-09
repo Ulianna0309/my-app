@@ -3,7 +3,8 @@ import styled from 'styled-components';
 import BootstrapTest from './BootstrapTest';
 
 import './App.css';
-import { Button } from 'react-bootstrap';
+import { Button} from 'react-bootstrap';
+import Form from './Form';
 
 
 
@@ -217,7 +218,10 @@ function App() {
               </>
 
             }/>
+
+       <Form/>
     </Wrapper>
+   
     
   );
 }
