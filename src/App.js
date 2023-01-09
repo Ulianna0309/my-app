@@ -145,9 +145,21 @@ const Greating = (props) => {
   )
 }
 
+
+const HelloGreatings = () => {
+  return (
+    <div style={{'width': '600px', 'margin': '0 auto'}}>
+      <Greating color={'primary'}>
+          <h2>HelloGreatings</h2>
+      </Greating>
+    </div>
+  )
+}
+
 function App() {
   return (
     <Wrapper>
+      <HelloGreatings/>
       
       <StrictMode>
         <Header/>
