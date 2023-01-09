@@ -3,6 +3,7 @@ import styled from 'styled-components';
 import BootstrapTest from './BootstrapTest';
 
 import './App.css';
+import { Button } from 'react-bootstrap';
 
 
 
@@ -97,23 +98,23 @@ const Header2 = styled.h2`
   font-size: 20px;
 `
 
-const Button = styled.button`
-background: #10C85D;
-box-shadow: 0px 34px 57px rgb(4 8 73 / 11%);
-border-radius: 15px;
-text-transform: capitalize;
-transition: all .3s easy;
-cursor: pointer;
-margin-top: 30px;
-padding: 20px 30px;
-font-weight: 700;
-font-size: 16px;
-line-height: 19px;
-border: 1px solid #10c85d;
-color: #ffffff;
-display: inline-block;
-text-decoration: none;
-`
+// const Button = styled.button`
+// background: #10C85D;
+// box-shadow: 0px 34px 57px rgb(4 8 73 / 11%);
+// border-radius: 15px;
+// text-transform: capitalize;
+// transition: all .3s easy;
+// cursor: pointer;
+// margin-top: 30px;
+// padding: 20px 30px;
+// font-weight: 700;
+// font-size: 16px;
+// line-height: 19px;
+// border: 1px solid #10c85d;
+// color: #ffffff;
+// display: inline-block;
+// text-decoration: none;
+// `
 
 
 
@@ -156,9 +157,43 @@ const HelloGreatings = () => {
   )
 }
 
+const Message = (props) => {
+  return(
+    <h2>The counter is {props.counter}</h2>
+  )
+}
+
+class Counter extends Component {
+  state = {
+    counter: 0
+  }
+
+  changeCounter = () => {
+    this.setState(({counter}) => ({
+      counter: counter + 1
+    }))
+  }
+
+  render(){
+    return(
+      <>
+        <button className={'btn btn-primary'}
+        onClick={this.changeCounter}>Cick me</button>
+        {this.props.render(this.state.counter)}
+        {this.props.render(this.state.counter)}
+      </>
+    )
+  }
+}
+
 function App() {
   return (
     <Wrapper>
+
+      <Counter render={counter => (
+        <Message counter={counter}/>
+      )}/>
+
       <HelloGreatings/>
       
       <StrictMode>
