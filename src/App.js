@@ -1,5 +1,6 @@
-import {Component, StrictMode, Fragment} from 'react';
+import React, {Component, StrictMode, Fragment} from 'react';
 import styled from 'styled-components';
+import BootstrapTest from './BootstrapTest';
 
 import './App.css';
 
@@ -135,7 +136,11 @@ export const Container = styled.div`
 const Greating = (props) => {
   return(
     <div className={'mb-3 p-3 border border-' + props.color}>
-        {props.children}
+        {
+          React.Children.map(props.children, child => {
+            return React.cloneElement(child,{className: 'shadow p-3 m-3 border rounded'} )
+          })
+        }
     </div>
   )
 }
@@ -143,9 +148,7 @@ const Greating = (props) => {
 function App() {
   return (
     <Wrapper>
-      <Greating color={'primary'}>
-         <h2>jhjhjhjh</h2>
-      </Greating>
+      
       <StrictMode>
         <Header/>
       </StrictMode>
@@ -153,9 +156,22 @@ function App() {
         <Btn/>
         <Field2/>
 
-        <WhoAmI name='Jon' surname="Smoth" link="gmail.com"/>
-        <WhoAmI name='Alex' surname="Smith" link="gmail.ua"/>
+        <BootstrapTest 
+          left = {
+            <Greating color={'primary'}>
+              <h2>props.children</h2>
+              <h2>React.cloneElement</h2>
+            </Greating>
+            }
+            right = {
+              <>
+              <WhoAmI name='Jon' surname="Smoth" link="gmail.com"/>
+              <WhoAmI name='Alex' surname="Smith" link="gmail.ua"/>
+              </>
+
+            }/>
     </Wrapper>
+    
   );
 }
 
