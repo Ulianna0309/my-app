@@ -5,6 +5,7 @@ import BootstrapTest from './BootstrapTest';
 import './App.css';
 import { Button} from 'react-bootstrap';
 import Form from './Form';
+import NewForm from './NewForm';
 
 
 
@@ -220,6 +221,7 @@ function App() {
             }/>
 
        <Form/>
+       <NewForm/>
     </Wrapper>
    
     
