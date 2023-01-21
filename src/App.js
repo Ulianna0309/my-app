@@ -6,6 +6,7 @@ import './App.css';
 import { Button} from 'react-bootstrap';
 import Form from './Form';
 import NewForm from './NewForm';
+import New from './New';
 
 
 
@@ -190,6 +191,8 @@ class Counter extends Component {
 
 function App() {
   return (
+    <>
+    <New/>
     <Wrapper>
 
       <Counter render={counter => (
@@ -224,7 +227,7 @@ function App() {
        <NewForm/>
     </Wrapper>
    
-    
+    </>
   );
 }
 
